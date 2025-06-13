@@ -1,0 +1,12 @@
+[project]
+name = "skill-atlas"
+version = "0.0.1"
+description = "Procedural skill-atlas generator"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = ["networkx>=3.0"]
+
+[project.scripts]
+skill-atlas = "skill_atlas.cli.main:run"
