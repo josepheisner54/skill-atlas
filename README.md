@@ -1,7 +1,10 @@
 # skill-atlas
-Procedural skill-atlas generator
 
+A playground for experimenting with **procedural skill-tree generation**. The project aims to create a flexible graph composition engine where nodes can be expanded into subgraphs according to a set of rewrite rules. Everything is still in the planning stages, but this repository documents the intended layout and upcoming milestones.
 
+## Repository layout
+
+```
 skill-atlas/
 ├─ README.md              ← Project pitch, quick-start, and architecture overview
 ├─ LICENSE                ← Pick your poison (MIT / Apache-2.0 are friendly)
@@ -63,3 +66,16 @@ skill-atlas/
    ├─ unit/
    ├─ integration/
    └─ golden/            – fixtures for deterministic graph snapshots
+```
+
+## Graph composition model
+
+At its heart the project treats a skill tree as a directed acyclic graph. Nodes can represent talents, perks, or technology items. Each node may optionally reference another graph template. During generation the **generator** module walks the graph, substituting these templates according to a set of procedural rules. This allows small building blocks to be combined into large atlases without hand‑crafting every connection.
+
+Rules live in the `grammar` package and describe how patterns should be replaced or expanded. A simple example might replace a single "spell" node with a small spell school subgraph, rolled with weighted randomness. More sophisticated rules can cluster nodes, mirror whole sections, or mutate attributes.
+
+The end goal is a reusable toolkit that can output to multiple formats (JSON, Godot scenes, Unity YAML, etc.) after applying a layout algorithm. The current codebase only contains the scaffolding, but the plan is laid out in the source tree and `ROADMAP.md`.
+
+## Contributing
+
+Contributions are welcome! Check the issue templates for guidance on filing bugs or proposing features. The [Roadmap](./ROADMAP.md) lists a few of the high‑level tasks that still need volunteers.
