@@ -1,0 +1,63 @@
+{
+  "10031": {
+    "skill": 10031,
+    "name": "Life",
+    "icon": "Art/2DArt/SkillIcons/passives/life1.png",
+    "stats": [
+      "6% increased maximum Life"
+    ],
+    "group": 84,
+    "orbit": 2,
+    "orbitIndex": 4,
+    "out": [
+      "15064"
+    ],
+    "in": [
+      "36949"
+    ]
+  },
+  "10016": {
+    "skill": 10016,
+    "name": "Executioner",
+    "icon": "Art/2DArt/SkillIcons/passives/reaver.png",
+    "isNotable": true,
+    "recipe": [
+      "AmberOil",
+      "VerdantOil",
+      "AzureOil"
+    ],
+    "stats": [
+      "60% increased Damage with Hits against Enemies that are on Low Life",
+      "15% increased Area of Effect if you've Killed Recently"
+    ],
+    "reminderText": [
+      "(Recently refers to the past 4 seconds)"
+    ],
+    "group": 261,
+    "orbit": 3,
+    "orbitIndex": 11,
+    "out": [
+      "35118"
+    ],
+    "in": [
+      "35362"
+    ]
+  },
+  "10017": {
+    "skill": 10017,
+    "name": "Attack Speed",
+    "icon": "Art/2DArt/SkillIcons/passives/attackspeed.png",
+    "stats": [
+      "4% increased Attack Speed"
+    ],
+    "group": 517,
+    "orbit": 2,
+    "orbitIndex": 8,
+    "out": [
+      "38344"
+    ],
+    "in": [
+      "65033"
+    ]
+  }
+}
