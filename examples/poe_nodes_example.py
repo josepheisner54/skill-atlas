@@ -1,4 +1,5 @@
 """Example script demonstrating a small set of Path of Exile skill nodes."""
+
 import json
 from pathlib import Path
 
@@ -11,4 +12,3 @@ if __name__ == "__main__":
         print(f"{node_id}: {data['name']}")
         for stat in data.get("stats", []):
             print(f"  - {stat}")
-
