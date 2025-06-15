@@ -9,6 +9,7 @@ requires-python = ">=3.9"
 dependencies = [
     "networkx>=3.0",
     "attrs>=23.1.0",
+    "PyYAML>=6.0",
 ]
 
 [project.optional-dependencies]
@@ -19,6 +20,7 @@ dev = [
     "pytest",
     "pytest-cov",
     "attrs>=23.1.0",
+    "PyYAML>=6.0",
 ]
 
 [project.scripts]

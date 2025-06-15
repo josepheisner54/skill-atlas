@@ -1,0 +1,18 @@
+- match: [abstract]
+  replace:
+    nodes:
+      - id: new1
+        name: New Node
+        description: Created from rule
+    edges: []
+- match: [foo, bar]
+  replace:
+    nodes:
+      - id: n2
+        name: Another Node
+        description: Example
+    edges:
+      - head: n2
+        tail: new1
+        directed: true
+  probability: 0.8
