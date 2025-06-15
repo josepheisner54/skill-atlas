@@ -8,5 +8,24 @@ requires-python = ">=3.9"
 
 dependencies = ["networkx>=3.0"]
 
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "ruff",
+    "pyright",
+    "pytest",
+    "pytest-cov",
+]
+
 [project.scripts]
 skill-atlas = "skill_atlas.cli.main:run"
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.pyright]
+typeCheckingMode = "strict"

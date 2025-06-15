@@ -4,13 +4,15 @@ from __future__ import annotations
 
 import argparse
 import importlib.metadata
+from typing import Any
+
 import networkx as nx
 
 
-def build_graph(n: int) -> nx.Graph:
+def build_graph(n: int) -> nx.Graph[Any]:
     """Return a simple graph with ``n`` nodes."""
-    g = nx.Graph()
-    g.add_nodes_from(range(n))
+    g: nx.Graph[Any] = nx.Graph()
+    g.add_nodes_from(range(n))  # pyright: ignore[reportUnknownMemberType]
     return g
 
 
