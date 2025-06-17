@@ -12,7 +12,8 @@ This file captures outstanding tasks and ideas for future contributors. When sub
 - [ ] Provide example configurations under `examples/`
 
 ## Layout and export
-- [ ] Implement radial and force-directed layout algorithms
+- [x] Implement radial layout algorithm
+- [ ] Implement force-directed layout algorithm
 - [ ] Provide exporters for JSON and a basic HTML visualization
 
 Feel free to add more tasks or expand the descriptions as the project evolves.
