@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from attrs import define, field
 import json
+import hashlib
 import networkx as nx
 from typing import Any
 
@@ -49,6 +50,18 @@ class AtlasGraph:
 
     # ------------------------------------------------------------------
     def serialize(self) -> str:
+        def _edge_key(e: Edge) -> tuple[str, str, bool, str]:
+            payload_json = json.dumps(e.payload, sort_keys=True)
+            payload_hash = hashlib.sha1(payload_json.encode()).hexdigest()
+            return (
+                e.tail,
+                e.head,
+                e.directed,
+                payload_hash,
+            )
+
+        edges_sorted = sorted(self.edges(), key=_edge_key)
+
         graph_dict = {
             "nodes": [
                 {
@@ -67,7 +80,7 @@ class AtlasGraph:
                     "directed": e.directed,
                     "payload": e.payload,
                 }
-                for e in self.edges()
+                for e in edges_sorted
             ],
         }
         return json.dumps(graph_dict, sort_keys=True)
