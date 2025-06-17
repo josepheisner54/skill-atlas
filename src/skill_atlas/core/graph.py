@@ -28,6 +28,10 @@ class AtlasGraph:
     # ------------------------------------------------------------------
     def add_edge(self, edge: Edge) -> None:
         """Add ``edge`` to the graph."""
+        # Undirected edges are stored once in ``_edges`` but inserted twice into
+        # the underlying ``networkx`` graph. When ``edge.directed`` is ``False``
+        # we add both ``tail``→``head`` and ``head``→``tail`` entries so
+        # neighbor lookups behave symmetrically.
         self._g.add_edge(edge.tail, edge.head, edge=edge)  # pyright: ignore[reportUnknownMemberType]
         if not edge.directed:
             self._g.add_edge(edge.head, edge.tail, edge=edge)  # pyright: ignore[reportUnknownMemberType]
